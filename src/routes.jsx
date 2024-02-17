@@ -18,8 +18,8 @@ export const routes = [
   },
   {
     name: 'Blog',
-    path: '/sign-up',
-    element: <SignUp />,
+    target: '_blank',
+    path: 'https://harshedabdulla.hashnode.dev',
   },
   {
     name: 'About Us',
