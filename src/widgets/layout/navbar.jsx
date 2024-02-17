@@ -98,11 +98,7 @@ export function Navbar({ brandName, routes, action }) {
       >
         <div className="container mx-auto">
           {navList}
-          <a
-            href="https://www.material-tailwind.com/blocks/react?ref=mtkr"
-            target="_blank"
-            className="mb-2 block"
-          ></a>
+          <a href="" target="_blank" className="mb-2 block"></a>
           {React.cloneElement(action, {
             className: 'w-full block',
           })}
