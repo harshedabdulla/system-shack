@@ -88,37 +88,37 @@ Footer.defaultProps = {
     {
       color: 'gray',
       name: 'twitter',
-      path: 'https://www.twitter.com/creativetim',
+      path: '',
     },
     {
       color: 'gray',
       name: 'youtube',
-      path: 'https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w',
+      path: '',
     },
     {
       color: 'gray',
-      name: 'instagram',
-      path: 'https://www.instagram.com/creativetimofficial/',
+      name: 'linkedin',
+      path: '',
     },
     {
       color: 'black',
       name: 'github',
-      path: 'https://github.com/creativetimofficial/material-tailwind',
+      path: '',
     },
   ],
   menus: [
     {
       name: 'useful links',
       items: [
-        { name: 'About Us', path: 'https://www.creative-tim.com/presentation' },
-        { name: 'Blog', path: 'https://www.creative-tim.com/blog' },
+        { name: 'About Us', path: 'https://www.systemshack.tech/aboutus' },
+        { name: 'Blog', path: '' },
         {
           name: 'Careers',
-          path: 'https://www.github.com/creativetimofficial/material-tailwind?ref=mtk',
+          path: '',
         },
         {
           name: 'Portfolio',
-          path: 'https://www.creative-tim.com/templates/free?ref=mtk',
+          path: 'https://www.systemshack.tech/portfolio',
         },
       ],
     },
@@ -127,19 +127,19 @@ Footer.defaultProps = {
       items: [
         {
           name: 'Terms of Service',
-          path: 'https://github.com/creativetimofficial/material-tailwind/blob/main/LICENSE.md?ref=mtk',
+          path: 'https://www.systemshack.tech/tos',
         },
         {
           name: 'Privacy Policy',
-          path: 'https://github.com/creativetimofficial/material-tailwind/blob/main/CONTRIBUTING.md?ref=mtk',
+          path: 'https://www.systemshack.tech/privacy',
         },
         {
           name: 'Support',
-          path: 'https://github.com/creativetimofficial/material-tailwind/blob/main/CHANGELOG.md?ref=mtk',
+          path: 'https://www.systemshack.tech/support',
         },
         {
           name: 'Contact Us',
-          path: 'https://creative-tim.com/contact-us?ref=mtk',
+          path: 'https://www.systemshack.tech/contactus',
         },
       ],
     },

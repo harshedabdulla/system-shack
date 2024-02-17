@@ -115,10 +115,7 @@ export function Navbar({ brandName, routes, action }) {
 Navbar.defaultProps = {
   brandName: 'System Shack',
   action: (
-    <a
-      href="https://www.creative-tim.com/product/material-tailwind-kit-react"
-      target="_blank"
-    >
+    <a href="https://www.systemshack.tech/contactus" target="_blank">
       <Button variant="gradient" size="sm" fullWidth>
         Contact Us
       </Button>
