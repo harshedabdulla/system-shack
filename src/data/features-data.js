@@ -1,29 +1,27 @@
-import {
-  ChatBubbleBottomCenterTextIcon,
-} from "@heroicons/react/24/solid";
+import { ChatBubbleBottomCenterTextIcon } from '@heroicons/react/24/solid'
 
 export const featuresData = [
   {
-    color: "gray",
-    title: "Awarded Agency",
+    color: 'gray',
+    title: 'Innovative Solutions',
     icon: ChatBubbleBottomCenterTextIcon,
     description:
-      "Divide details about your product or agency work into parts. A paragraph describing a feature will be enough.",
+      'At the forefront of technology, System Shack specializes in delivering cutting-edge solutions that drive startup growth. Our forward-thinking approach ensures your project is not just current but future-ready.',
   },
   {
-    color: "gray",
-    title: "Free Revisions",
+    color: 'gray',
+    title: 'Free Revisions',
     icon: ChatBubbleBottomCenterTextIcon,
     description:
-      "Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious.",
+      "Your satisfaction is our priority. At System Shack, we offer free revisions on our web and app development services to ensure your product perfectly aligns with your vision. We refine until you're delighted",
   },
   {
-    color: "gray",
-    title: "Verified Company",
+    color: 'gray',
+    title: 'Verified Company',
     icon: ChatBubbleBottomCenterTextIcon,
     description:
-      "Write a few lines about each one. A paragraph describing a feature will be enough. Keep you user engaged!",
+      'Trust is the foundation of every great partnership. System Shack is a verified entity committed to transparency and integrity. Partner with us for dependable, high-quality tech solutions.',
   },
-];
+]
 
-export default featuresData;
+export default featuresData

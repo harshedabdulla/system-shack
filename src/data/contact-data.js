@@ -2,27 +2,27 @@ import {
   BriefcaseIcon,
   ChartBarIcon,
   PlayIcon,
-} from "@heroicons/react/24/solid";
+} from '@heroicons/react/24/solid'
 
 export const contactData = [
   {
-    title: "Excelent Services",
+    title: 'Tailored Tech Solutions',
     icon: BriefcaseIcon,
     description:
-      "Some quick example text to build on the card title and make up the bulk of the card's content.",
+      "Dive into a suite of customized development services that cater specifically to your startup's needs.",
   },
   {
-    title: "Grow Your Market",
+    title: 'Strategic Marketing Growth',
     icon: ChartBarIcon,
     description:
-      "Some quick example text to build on the card title and make up the bulk of the card's content.",
+      'Expand your reach with our data-driven marketing strategies. We amplify your presence with SEO, content marketing, and social campaigns',
   },
   {
-    title: "Launch Time",
+    title: 'Swift to Market',
     icon: PlayIcon,
     description:
-      "Some quick example text to build on the card title and make up the bulk of the card's content.",
+      'Accelerate your launch with our streamlined development process. We prioritize efficiency without sacrificing quality.',
   },
-];
+]
 
-export default contactData;
+export default contactData

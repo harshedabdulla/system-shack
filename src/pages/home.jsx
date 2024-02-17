@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 import {
   Card,
   CardBody,
@@ -9,32 +9,36 @@ import {
   Input,
   Textarea,
   Checkbox,
-} from "@material-tailwind/react";
-import { FingerPrintIcon, UsersIcon } from "@heroicons/react/24/solid";
-import { PageTitle, Footer } from "@/widgets/layout";
-import { FeatureCard, TeamCard } from "@/widgets/cards";
-import { featuresData, teamData, contactData } from "@/data";
+} from '@material-tailwind/react'
+import { FingerPrintIcon, UsersIcon } from '@heroicons/react/24/solid'
+import { PageTitle, Footer } from '@/widgets/layout'
+import { FeatureCard, TeamCard } from '@/widgets/cards'
+import { featuresData, teamData, contactData } from '@/data'
+import './styles.css'
 
 export function Home() {
   return (
     <>
       <div className="relative flex h-screen content-center items-center justify-center pt-16 pb-32">
-        <div className="absolute top-0 h-full w-full bg-[url('/img/background-3.png')] bg-cover bg-center" />
+        <div className="absolute top-0 h-full w-full bg-[url('/img/background-3.jpg')] bg-cover bg-center" />
         <div className="absolute top-0 h-full w-full bg-black/60 bg-cover bg-center" />
         <div className="max-w-8xl container relative mx-auto">
           <div className="flex flex-wrap items-center">
-            <div className="ml-auto mr-auto w-full px-4 text-center lg:w-8/12">
+            <div className="ml-auto mr-auto w-full px-8 text-center lg:w-8/12">
               <Typography
                 variant="h1"
-                color="white"
-                className="mb-6 font-black"
+                color="white" // This may be overridden by the gradient, so it's optional here
+                className="mb-6 font-black gradient-text"
               >
-                Your story starts with us.
+                Empowering Startups with Cutting-Edge Technology Solutions
               </Typography>
-              <Typography variant="lead" color="white" className="opacity-80">
-                This is a simple example of a Landing Page you can build using
-                Material Tailwind. It features multiple components based on the
-                Tailwind CSS and Material Design by Google.
+              <Typography color="white" className="opacity-80">
+                Specializing in bespoke website, app development, and SEO
+                strategies, we provide the technological backbone that upcoming
+                startups need to thrive in the digital world. With a focus on
+                agile methodologies, cost-effective solutions, and unparalleled
+                support, we're not just service providers; we're your tech
+                partners in growth.
               </Typography>
             </div>
           </div>
@@ -49,7 +53,7 @@ export function Home() {
                 color={color}
                 title={title}
                 icon={React.createElement(icon, {
-                  className: "w-5 h-5 text-white",
+                  className: 'w-5 h-5 text-white',
                 })}
                 description={description}
               />
@@ -65,42 +69,48 @@ export function Home() {
                 className="mb-3 font-bold"
                 color="blue-gray"
               >
-                Working with us is a pleasure
+                Seamless Integration, Exceptional Results
               </Typography>
               <Typography className="mb-8 font-normal text-blue-gray-500">
-                Don't let your uses guess by attaching tooltips and popoves to
-                any element. Just make sure you enable them first via
-                JavaScript.
+                Embark on a hassle-free journey with System Shack, where we
+                transform your startup ideas into digital realities. Our
+                comprehensive toolkit is designed for ease, efficiency, and
+                empowerment, ensuring that your project launches smoothly and
+                swiftly.
                 <br />
                 <br />
-                The kit comes with three pre-built pages to help you get started
-                faster. You can change the text and images and you're good to
-                go. Just make sure you enable them first via JavaScript.
+                Experience the synergy of cutting-edge technology and expert
+                guidance tailored just for your business needs.
               </Typography>
-              <Button variant="filled">read more</Button>
+              <Button variant="filled">Discover How</Button>
             </div>
             <div className="mx-auto mt-24 flex w-full justify-center px-4 md:w-4/12 lg:mt-0">
               <Card className="shadow-lg border shadow-gray-500/10 rounded-lg">
                 <CardHeader floated={false} className="relative h-56">
                   <img
                     alt="Card Image"
-                    src="/img/teamwork.png"
+                    src="/img/teamwork.jpg"
                     className="h-full w-full"
                   />
                 </CardHeader>
                 <CardBody>
-                  <Typography variant="small" color="blue-gray" className="font-normal">Enterprise</Typography>
+                  <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className="font-normal"
+                  ></Typography>
                   <Typography
                     variant="h5"
                     color="blue-gray"
                     className="mb-3 mt-2 font-bold"
                   >
-                    Top Notch Services
+                    Customized Solutions for Every Startup
                   </Typography>
                   <Typography className="font-normal text-blue-gray-500">
-                    The Arctic Ocean freezes every winter and much of the
-                    sea-ice then thaws every summer, and that process will
-                    continue whatever happens.
+                    Every startup is unique, and so should be its digital
+                    solution. At System Shack, we don’t just build websites and
+                    apps; we craft customized platforms that resonate with your
+                    brand identity and business goals.
                   </Typography>
                 </CardBody>
               </Card>
@@ -111,9 +121,9 @@ export function Home() {
       <section className="px-4 pt-20 pb-48">
         <div className="container mx-auto">
           <PageTitle section="Our Team" heading="Here are our heroes">
-            According to the National Oceanic and Atmospheric Administration,
-            Ted, Scambos, NSIDClead scentist, puts the potentially record
-            maximum.
+            Meet the innovators at System Shack. Our dedicated team of experts
+            brings together a wealth of experience, creativity, and tech-savvy
+            to propel your startup to new heights.
           </PageTitle>
           <div className="mt-24 grid grid-cols-1 gap-12 gap-x-24 md:grid-cols-2 xl:grid-cols-4">
             {teamData.map(({ img, name, position, socials }) => (
@@ -138,10 +148,9 @@ export function Home() {
       </section>
       <section className="relative bg-white py-24 px-4">
         <div className="container mx-auto">
-          <PageTitle section="Co-Working" heading="Build something">
-            Put the potentially record low maximum sea ice extent tihs year down
-            to low ice. According to the National Oceanic and Atmospheric
-            Administration, Ted, Scambos.
+          <PageTitle section="" heading="Empower Your Startup Journey">
+            From initial concept to market leader, System Shack provides the
+            tools and expertise to bring your digital ambitions to life.
           </PageTitle>
           <div className="mx-auto mt-20 mb-48 grid max-w-5xl grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-3">
             {contactData.map(({ title, icon, description }) => (
@@ -153,7 +162,7 @@ export function Home() {
               >
                 <div className="mx-auto mb-6 grid h-14 w-14 place-items-center rounded-full bg-blue-gray-900 shadow-lg shadow-gray-500/20">
                   {React.createElement(icon, {
-                    className: "w-5 h-5 text-white",
+                    className: 'w-5 h-5 text-white',
                   })}
                 </div>
                 <Typography variant="h5" color="blue-gray" className="mb-2">
@@ -190,7 +199,7 @@ export function Home() {
                   </a>
                 </Typography>
               }
-              containerProps={{ className: "-ml-2.5" }}
+              containerProps={{ className: '-ml-2.5' }}
             />
             <Button variant="gradient" size="lg" className="mt-8" fullWidth>
               Send Message
@@ -202,7 +211,7 @@ export function Home() {
         <Footer />
       </div>
     </>
-  );
+  )
 }
 
-export default Home;
+export default Home

@@ -1,7 +1,7 @@
-import PropTypes from "prop-types";
-import { Typography, IconButton } from "@material-tailwind/react";
+import PropTypes from 'prop-types'
+import { Typography, IconButton } from '@material-tailwind/react'
 
-const year = new Date().getFullYear();
+const year = new Date().getFullYear()
 
 export function Footer({ title, description, socials, menus, copyright }) {
   return (
@@ -23,7 +23,10 @@ export function Footer({ title, description, socials, menus, copyright }) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <IconButton color="white" className="rounded-full shadow-none bg-transparent">
+                  <IconButton
+                    color="white"
+                    className="rounded-full shadow-none bg-transparent"
+                  >
                     <Typography color={color}>
                       <i className={`fa-brands fa-${name}`} />
                     </Typography>
@@ -75,87 +78,74 @@ export function Footer({ title, description, socials, menus, copyright }) {
         </div>
       </div>
     </footer>
-  );
+  )
 }
 
 Footer.defaultProps = {
-  title: "Material Tailwind",
-  description:
-    "Easy to use React components for Tailwind CSS and Material Design.",
+  title: 'System Shack',
+  description: 'Your Startups Digital Accelerator',
   socials: [
     {
-      color: "gray",
-      name: "twitter",
-      path: "https://www.twitter.com/creativetim",
+      color: 'gray',
+      name: 'twitter',
+      path: 'https://www.twitter.com/creativetim',
     },
     {
-      color: "gray",
-      name: "youtube",
-      path: "https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w",
+      color: 'gray',
+      name: 'youtube',
+      path: 'https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w',
     },
     {
-      color: "gray",
-      name: "instagram",
-      path: "https://www.instagram.com/creativetimofficial/",
+      color: 'gray',
+      name: 'instagram',
+      path: 'https://www.instagram.com/creativetimofficial/',
     },
     {
-      color: "black",
-      name: "github",
-      path: "https://github.com/creativetimofficial/material-tailwind",
+      color: 'black',
+      name: 'github',
+      path: 'https://github.com/creativetimofficial/material-tailwind',
     },
   ],
   menus: [
     {
-      name: "useful links",
+      name: 'useful links',
       items: [
-        { name: "About Us", path: "https://www.creative-tim.com/presentation" },
-        { name: "Blog", path: "https://www.creative-tim.com/blog" },
+        { name: 'About Us', path: 'https://www.creative-tim.com/presentation' },
+        { name: 'Blog', path: 'https://www.creative-tim.com/blog' },
         {
-          name: "Github",
-          path: "https://www.github.com/creativetimofficial/material-tailwind?ref=mtk",
+          name: 'Careers',
+          path: 'https://www.github.com/creativetimofficial/material-tailwind?ref=mtk',
         },
         {
-          name: "Free Products",
-          path: "https://www.creative-tim.com/templates/free?ref=mtk",
+          name: 'Portfolio',
+          path: 'https://www.creative-tim.com/templates/free?ref=mtk',
         },
       ],
     },
     {
-      name: "other resources",
+      name: 'other resources',
       items: [
         {
-          name: "MIT License",
-          path: "https://github.com/creativetimofficial/material-tailwind/blob/main/LICENSE.md?ref=mtk",
+          name: 'Terms of Service',
+          path: 'https://github.com/creativetimofficial/material-tailwind/blob/main/LICENSE.md?ref=mtk',
         },
         {
-          name: "Contribute",
-          path: "https://github.com/creativetimofficial/material-tailwind/blob/main/CONTRIBUTING.md?ref=mtk",
+          name: 'Privacy Policy',
+          path: 'https://github.com/creativetimofficial/material-tailwind/blob/main/CONTRIBUTING.md?ref=mtk',
         },
         {
-          name: "Change Log",
-          path: "https://github.com/creativetimofficial/material-tailwind/blob/main/CHANGELOG.md?ref=mtk",
+          name: 'Support',
+          path: 'https://github.com/creativetimofficial/material-tailwind/blob/main/CHANGELOG.md?ref=mtk',
         },
         {
-          name: "Contact Us",
-          path: "https://creative-tim.com/contact-us?ref=mtk",
+          name: 'Contact Us',
+          path: 'https://creative-tim.com/contact-us?ref=mtk',
         },
       ],
     },
   ],
-  copyright: (
-    <>
-      Copyright © {year} Material Tailwind by{" "}
-      <a
-        href="https://www.creative-tim.com?ref=mtk"
-        target="_blank"
-        className="text-blue-gray-500 transition-colors hover:text-blue-500"
-      >
-        Creative Tim
-      </a>
-      .
-    </>
-  ),
-};
+  copyright: <>Copyright © {year} System Shack. All rights reserved.</>,
+}
 
 Footer.propTypes = {
   title: PropTypes.string,
@@ -163,8 +153,8 @@ Footer.propTypes = {
   socials: PropTypes.arrayOf(PropTypes.object),
   menus: PropTypes.arrayOf(PropTypes.object),
   copyright: PropTypes.node,
-};
+}
 
-Footer.displayName = "/src/widgets/layout/footer.jsx";
+Footer.displayName = '/src/widgets/layout/footer.jsx'
 
-export default Footer;
+export default Footer
