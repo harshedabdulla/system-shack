@@ -61,23 +61,15 @@ export function Navbar({ brandName, routes, action }) {
   )
 
   return (
-    <MTNavbar color="transparent" className="p-3">
+    <MTNavbar color="transparent" className="p-3 font-outfit">
       <div className="container mx-auto flex items-center justify-between text-white">
         <Link to="/">
-          <Typography className="mr-4 ml-2 cursor-pointer py-1.5">
+          <Typography className="mr-4 ml-2 cursor-pointer py-1.5 text-2xl font-outfit">
             {brandName}
           </Typography>
         </Link>
         <div className="hidden lg:block">{navList}</div>
-        <div className="hidden gap-2 lg:flex">
-          <a
-            href="https://www.material-tailwind.com/blocks?ref=mtkr"
-            target="_blank"
-          ></a>
-          {React.cloneElement(action, {
-            className: 'hidden lg:inline-block',
-          })}
-        </div>
+
         <IconButton
           variant="text"
           size="sm"

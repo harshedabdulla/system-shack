@@ -24,21 +24,28 @@ export function Home() {
         <div className="absolute top-0 h-full w-full bg-black/60 bg-cover bg-center" />
         <div className="max-w-8xl container relative mx-auto">
           <div className="flex flex-wrap items-center">
-            <div className="ml-auto mr-auto w-full px-8 text-center lg:w-8/12">
+            <div className="ml-auto mr-auto w-full px-8 text-center lg:w-8/12 font-outfit">
               <Typography
-                variant="h1"
-                color="white" // This may be overridden by the gradient, so it's optional here
-                className="mb-6 font-black gradient-text"
+                className="
+                animate-text
+                bg-gradient-to-r
+                from-teal-500
+                via-purple-500
+                to-orange-500
+                bg-clip-text
+                text-transparent
+                text-7xl
+                font-black
+                font-outfit"
               >
-                Empowering Startups with Cutting-Edge Technology Solutions
+                Create change, one app at a time.
               </Typography>
-              <Typography color="white" className="opacity-80">
-                Specializing in bespoke website, app development, and SEO
-                strategies, we provide the technological backbone that upcoming
-                startups need to thrive in the digital world. With a focus on
-                agile methodologies, cost-effective solutions, and unparalleled
-                support, we're not just service providers; we're your tech
-                partners in growth.
+              <Typography
+                color="white"
+                className="opacity-80 py-4 my-8 font-outfit"
+              >
+                Develop custom micro-SaaS solutions that address real-world
+                problems.
               </Typography>
             </div>
           </div>
