@@ -21,7 +21,16 @@ export function Home() {
     <>
       <div className="relative flex h-screen content-center items-center justify-center pt-16 pb-32">
         <div className="absolute top-0 h-full w-full bg-[url('/img/background-3.jpg')] bg-cover bg-center" />
-        <div className="absolute top-0 h-full w-full bg-black/60 bg-cover bg-center" />
+        <video
+          className="absolute top-0 h-full w-full object-cover"
+          autoPlay
+          loop
+          muted
+        >
+          <source src="https://cuono.dev/video1.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
         <div className="max-w-8xl container relative mx-auto">
           <div className="flex flex-wrap items-center">
             <div className="ml-auto mr-auto w-full px-8 text-center lg:w-8/12 font-outfit">
@@ -34,7 +43,7 @@ export function Home() {
                 to-orange-500
                 bg-clip-text
                 text-transparent
-                text-7xl
+                text-8xl
                 font-black
                 font-outfit"
               >
@@ -42,11 +51,8 @@ export function Home() {
               </Typography>
               <Typography
                 color="white"
-                className="opacity-80 py-4 my-8 font-outfit"
-              >
-                Develop custom micro-SaaS solutions that address real-world
-                problems.
-              </Typography>
+                className="opacity-80 font-outfit"
+              ></Typography>
             </div>
           </div>
         </div>
