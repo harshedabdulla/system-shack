@@ -38,9 +38,7 @@ export function Home() {
                 className="
                 animate-text
                 bg-gradient-to-r
-                from-teal-500
-                via-purple-500
-                to-orange-500
+                from-purple-400 via-purple-600 to-purple-900
                 bg-clip-text
                 text-transparent
                 text-8xl

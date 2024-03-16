@@ -68,13 +68,15 @@ export function Navbar({ brandName, routes, action }) {
             {brandName}
           </Typography>
         </Link>
-        <div className="hidden lg:block">{navList}</div>
+        <div className="hidden lg:block text-purple-900 font-semibold text-xl">
+          {navList}
+        </div>
 
         <IconButton
           variant="text"
           size="sm"
           color="white"
-          className="ml-auto text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+          className="ml-auto text-inherent hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
           onClick={() => setOpenNav(!openNav)}
         >
           {openNav ? (

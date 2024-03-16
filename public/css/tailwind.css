@@ -2,3 +2,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer base {
+  .font-outline-2 {
+    -webkit-text-stroke: 0.5px purple;
+  }
+  .font-outline-4 {
+    -webkit-text-stroke: 4px black;
+  }
+}
