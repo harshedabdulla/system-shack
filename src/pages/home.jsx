@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   Card,
   CardBody,
@@ -11,12 +11,58 @@ import {
   Checkbox,
 } from '@material-tailwind/react'
 import { FingerPrintIcon, UsersIcon } from '@heroicons/react/24/solid'
+import { motion } from 'framer-motion'
 import { PageTitle, Footer } from '@/widgets/layout'
 import { FeatureCard, TeamCard } from '@/widgets/cards'
 import { featuresData, teamData, contactData } from '@/data'
 import './styles.css'
 
 export function Home() {
+  // Define all texts in an array
+  const allTexts = ['Create change,', 'one app at a ', 'time.']
+  // State to keep track of texts to display
+  const [displayedTexts, setDisplayedTexts] = useState([])
+  // Animation variants for the container
+  const containerVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        when: 'beforeChildren',
+        staggerChildren: 0.1,
+      },
+    },
+  }
+
+  // Animation variants for individual items
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5 },
+    },
+  }
+
+  useEffect(() => {
+    // Function to add the next text to the displayedTexts array
+    const addNextText = () => {
+      setDisplayedTexts((currentTexts) => {
+        // Check if there are more texts to display
+        if (currentTexts.length < allTexts.length) {
+          return [...currentTexts, allTexts[currentTexts.length]]
+        }
+        return currentTexts // No more texts to add
+      })
+    }
+
+    // Set interval to add the next text every 4 seconds
+    const intervalId = setInterval(addNextText, 2000)
+
+    // Clear interval on component unmount
+    return () => clearInterval(intervalId)
+  }, [])
   return (
     <>
       <div className="relative flex h-screen content-center items-center justify-center pt-16 pb-32">
@@ -34,28 +80,14 @@ export function Home() {
         <div className="max-w-8xl container relative mx-auto">
           <div className="flex flex-wrap items-center">
             <div className="ml-auto mr-auto w-full px-8 text-center lg:w-8/12 font-outfit">
-              <Typography
-                className="
-                animate-text
-                bg-gradient-to-r
-                from-purple-400 via-purple-600 to-purple-900
-                bg-clip-text
-                text-transparent
-                text-8xl
-                font-black
-                font-outfit"
-              >
-                Create change, one app at a time.
+              <Typography className="animate-text bg-gradient-to-r from-purple-400 via-purple-600 to-purple-900 bg-clip-text text-transparent text-8xl font-black font-outfit">
+                {displayedTexts.join(' ')}
               </Typography>
-              <Typography
-                color="white"
-                className="opacity-80 font-outfit"
-              ></Typography>
             </div>
           </div>
         </div>
       </div>
-      <section className="-mt-32 bg-white px-4 pb-20 pt-4">
+      <section className="-mt-32 bg-orange-900 px-4 pb-20 pt-4 font-outfit">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {featuresData.map(({ color, title, icon, description }) => (
@@ -64,7 +96,7 @@ export function Home() {
                 color={color}
                 title={title}
                 icon={React.createElement(icon, {
-                  className: 'w-5 h-5 text-white',
+                  className: 'w-5 h-5',
                 })}
                 description={description}
               />
@@ -76,13 +108,13 @@ export function Home() {
                 <FingerPrintIcon className="h-8 w-8 text-white " />
               </div>
               <Typography
-                variant="h3"
-                className="mb-3 font-bold"
+                variant="h2"
+                className="mb-3 font-bold font-outfit"
                 color="blue-gray"
               >
                 Seamless Integration, Exceptional Results
               </Typography>
-              <Typography className="mb-8 font-normal text-blue-gray-500">
+              <Typography className="mb-8 font-normal text-white font-outfit">
                 Embark on a hassle-free journey with System Shack, where we
                 transform your startup ideas into digital realities. Our
                 comprehensive toolkit is designed for ease, efficiency, and
@@ -93,10 +125,12 @@ export function Home() {
                 Experience the synergy of cutting-edge technology and expert
                 guidance tailored just for your business needs.
               </Typography>
-              <Button variant="filled">Discover How</Button>
+              <Button variant="filled" className="font-outfit">
+                Discover How
+              </Button>
             </div>
             <div className="mx-auto mt-24 flex w-full justify-center px-4 md:w-4/12 lg:mt-0">
-              <Card className="shadow-lg border shadow-gray-500/10 rounded-lg">
+              <Card className="shadow-lg border shadow-grey-500/10 rounded-lg">
                 <CardHeader floated={false} className="relative h-56">
                   <img
                     alt="Card Image"
@@ -113,11 +147,11 @@ export function Home() {
                   <Typography
                     variant="h5"
                     color="blue-gray"
-                    className="mb-3 mt-2 font-bold"
+                    className="mb-3 mt-2 font-bold font-outfit"
                   >
                     Customized Solutions for Every Startup
                   </Typography>
-                  <Typography className="font-normal text-blue-gray-500">
+                  <Typography className="font-normal font-outfit text-blue-gray-500">
                     Every startup is unique, and so should be its digital
                     solution. At System Shack, we don’t just build websites and
                     apps; we craft customized platforms that resonate with your
