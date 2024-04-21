@@ -68,9 +68,7 @@ export function Navbar({ brandName, routes, action }) {
             {brandName}
           </Typography>
         </Link>
-        <div className="hidden lg:block text-purple-900 font-semibold text-xl">
-          {navList}
-        </div>
+        <div className="hidden lg:block font-semibold text-xl">{navList}</div>
 
         <IconButton
           variant="text"

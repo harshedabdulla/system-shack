@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import {
   Card,
-  CardBody,
-  CardHeader,
   Typography,
   Button,
   IconButton,
@@ -10,167 +8,116 @@ import {
   Textarea,
   Checkbox,
 } from '@material-tailwind/react'
-import { FingerPrintIcon, UsersIcon } from '@heroicons/react/24/solid'
-import { motion } from 'framer-motion'
 import { PageTitle, Footer } from '@/widgets/layout'
-import { FeatureCard, TeamCard } from '@/widgets/cards'
-import { featuresData, teamData, contactData } from '@/data'
+import { TeamCard } from '@/widgets/cards'
+import { teamData, contactData } from '@/data'
 import './styles.css'
 
 export function Home() {
-  // Define all texts in an array
-  const allTexts = ['Create change,', 'one app at a ', 'time.']
-  // State to keep track of texts to display
-  const [displayedTexts, setDisplayedTexts] = useState([])
-  // Animation variants for the container
-  const containerVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        when: 'beforeChildren',
-        staggerChildren: 0.1,
-      },
-    },
-  }
-
-  // Animation variants for individual items
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 },
-    },
-  }
+  const [textIndex, setTextIndex] = useState(0)
+  const texts = ['STREAMLINE', 'COLLABORATE', 'MODERNIZE', 'REVOLUTIONIZE']
 
   useEffect(() => {
-    // Function to add the next text to the displayedTexts array
-    const addNextText = () => {
-      setDisplayedTexts((currentTexts) => {
-        // Check if there are more texts to display
-        if (currentTexts.length < allTexts.length) {
-          return [...currentTexts, allTexts[currentTexts.length]]
-        }
-        return currentTexts // No more texts to add
-      })
-    }
+    const interval = setInterval(() => {
+      setTextIndex((prevIndex) => (prevIndex + 1) % texts.length)
+    }, 2000) // Change text every 2 seconds
 
-    // Set interval to add the next text every 4 seconds
-    const intervalId = setInterval(addNextText, 2000)
-
-    // Clear interval on component unmount
-    return () => clearInterval(intervalId)
+    return () => clearInterval(interval)
   }, [])
+
   return (
     <>
       <div className="relative flex h-screen content-center items-center justify-center pt-16 pb-32">
-        <div className="absolute top-0 h-full w-full bg-[url('/img/background-3.jpg')] bg-cover bg-center" />
-        <video
-          className="absolute top-0 h-full w-full object-cover"
-          autoPlay
-          loop
-          muted
-        >
-          <source src="https://cuono.dev/video1.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <div className="absolute top-0 h-full w-full bg-[url('/img/bg1.jpg')] bg-cover bg-center" />
 
         <div className="max-w-8xl container relative mx-auto">
           <div className="flex flex-wrap items-center">
             <div className="ml-auto mr-auto w-full px-8 text-center lg:w-8/12 font-outfit">
-              <Typography className="animate-text bg-gradient-to-r from-purple-400 via-purple-600 to-purple-900 bg-clip-text text-transparent text-8xl font-black font-outfit">
-                {displayedTexts.join(' ')}
+              <Typography className="animate-text text-white text-8xl mt-8 font-outfit">
+                CREATING CHANGE, ONE APP AT A TIME
               </Typography>
             </div>
           </div>
         </div>
       </div>
-      <section className="-mt-32 bg-orange-900 px-4 pb-20 pt-4 font-outfit">
+      <section className="bg-[#ff3901] h-screen px-4 pb-20 pt-4 font-outfit">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {featuresData.map(({ color, title, icon, description }) => (
-              <FeatureCard
-                key={title}
-                color={color}
-                title={title}
-                icon={React.createElement(icon, {
-                  className: 'w-5 h-5',
-                })}
-                description={description}
-              />
-            ))}
-          </div>
-          <div className="mt-32 flex flex-wrap items-center">
-            <div className="mx-auto -mt-8 w-full px-4 md:w-5/12">
-              <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-blue-gray-900 p-2 text-center shadow-lg">
-                <FingerPrintIcon className="h-8 w-8 text-white " />
-              </div>
-              <Typography
-                variant="h2"
-                className="mb-3 font-bold font-outfit"
-                color="blue-gray"
-              >
-                Seamless Integration, Exceptional Results
-              </Typography>
-              <Typography className="mb-8 font-normal text-white font-outfit">
-                Embark on a hassle-free journey with System Shack, where we
-                transform your startup ideas into digital realities. Our
-                comprehensive toolkit is designed for ease, efficiency, and
-                empowerment, ensuring that your project launches smoothly and
-                swiftly.
-                <br />
-                <br />
-                Experience the synergy of cutting-edge technology and expert
-                guidance tailored just for your business needs.
-              </Typography>
-              <Button variant="filled" className="font-outfit">
-                Discover How
-              </Button>
+          <div className="flex flex-wrap items-center">
+            <div className="mx-auto text-white text-7xl font-bold mt-20 w-full px-4">
+              WE’RE ON A MISSION TO ACCELERATE,
+              <br />
+              ACTIVATE, AND ADVOCATE FOR THE
+              <br />
+              WORLD’S MOST IMPACTFUL IDEAS
             </div>
-            <div className="mx-auto mt-24 flex w-full justify-center px-4 md:w-4/12 lg:mt-0">
-              <Card className="shadow-lg border shadow-grey-500/10 rounded-lg">
-                <CardHeader floated={false} className="relative h-56">
-                  <img
-                    alt="Card Image"
-                    src="/img/teamwork.jpg"
-                    className="h-full w-full"
-                  />
-                </CardHeader>
-                <CardBody>
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="font-normal"
-                  ></Typography>
-                  <Typography
-                    variant="h5"
-                    color="blue-gray"
-                    className="mb-3 mt-2 font-bold font-outfit"
-                  >
-                    Customized Solutions for Every Startup
-                  </Typography>
-                  <Typography className="font-normal font-outfit text-blue-gray-500">
-                    Every startup is unique, and so should be its digital
-                    solution. At System Shack, we don’t just build websites and
-                    apps; we craft customized platforms that resonate with your
-                    brand identity and business goals.
-                  </Typography>
-                </CardBody>
-              </Card>
+            <div className="border-rounded-5 rounded-lg px-4 mt-12 mx-4 border-white text-white text-3xl border-[2px] font-serif hover:bg-white hover:text-[#ff3901] transition duration-300 ease-in-out">
+              <button>Projects</button>
             </div>
           </div>
         </div>
       </section>
-      <section className="px-4 pt-20 pb-48">
+      <section className="px-8 py-12 bg-[url('/img/bg3.jpg')] h-screen bg-cover bg-center">
+        <div className="mx-auto container">
+          <div className="rounded-3xl border-white bg-transparent border-[2px] text-white w-max px-2">
+            SHOWCASE
+          </div>
+          <div className="text-white text-4xl font-bold mt-8 font-outfit">
+            OUR PROJECTS
+          </div>
+          <div className="my-4 py-4">
+            <div className="carousel rounded-box">
+              <div className="carousel-item">
+                <img
+                  src="https://daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg"
+                  alt="Burger"
+                />
+              </div>
+              <div className="carousel-item">
+                <img
+                  src="https://daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.jpg"
+                  alt="Burger"
+                />
+              </div>
+              <div className="carousel-item">
+                <img
+                  src="https://daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.jpg"
+                  alt="Burger"
+                />
+              </div>
+              <div className="carousel-item">
+                <img
+                  src="https://daisyui.com/images/stock/photo-1494253109108-2e30c049369b.jpg"
+                  alt="Burger"
+                />
+              </div>
+              <div className="carousel-item">
+                <img
+                  src="https://daisyui.com/images/stock/photo-1550258987-190a2d41a8ba.jpg"
+                  alt="Burger"
+                />
+              </div>
+              <div className="carousel-item">
+                <img
+                  src="https://daisyui.com/images/stock/photo-1559181567-c3190ca9959b.jpg"
+                  alt="Burger"
+                />
+              </div>
+              <div className="carousel-item">
+                <img
+                  src="https://daisyui.com/images/stock/photo-1601004890684-d8cbf643f5f2.jpg"
+                  alt="Burger"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="px-4 pt-12 pb-4 h-screen">
         <div className="container mx-auto">
-          <PageTitle section="Our Team" heading="Here are our heroes">
-            Meet the innovators at System Shack. Our dedicated team of experts
-            brings together a wealth of experience, creativity, and tech-savvy
-            to propel your startup to new heights.
-          </PageTitle>
-          <div className="mt-24 grid grid-cols-1 gap-12 gap-x-24 md:grid-cols-2 xl:grid-cols-4">
+          <div className="text-6xl font-outfit text-[#ff3901] font-bold mt-8">
+            PEOPLE
+          </div>
+          <div className="mt-16 grid grid-cols-1 gap-12 gap-x-24 md:grid-cols-2 xl:grid-cols-4 text-[#ff3901]">
             {teamData.map(({ img, name, position, socials }) => (
               <TeamCard
                 key={name}
@@ -178,7 +125,7 @@ export function Home() {
                 name={name}
                 position={position}
                 socials={
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 text-[#ff3901]">
                     {socials.map(({ color, name }) => (
                       <IconButton key={name} color={color} variant="text">
                         <i className={`fa-brands text-xl fa-${name}`} />
@@ -191,67 +138,18 @@ export function Home() {
           </div>
         </div>
       </section>
-      <section className="relative bg-white py-24 px-4">
-        <div className="container mx-auto">
-          <PageTitle section="" heading="Empower Your Startup Journey">
-            From initial concept to market leader, System Shack provides the
-            tools and expertise to bring your digital ambitions to life.
-          </PageTitle>
-          <div className="mx-auto mt-20 mb-48 grid max-w-5xl grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-3">
-            {contactData.map(({ title, icon, description }) => (
-              <Card
-                key={title}
-                color="transparent"
-                shadow={false}
-                className="text-center text-blue-gray-900"
-              >
-                <div className="mx-auto mb-6 grid h-14 w-14 place-items-center rounded-full bg-blue-gray-900 shadow-lg shadow-gray-500/20">
-                  {React.createElement(icon, {
-                    className: 'w-5 h-5 text-white',
-                  })}
-                </div>
-                <Typography variant="h5" color="blue-gray" className="mb-2">
-                  {title}
-                </Typography>
-                <Typography className="font-normal text-blue-gray-500">
-                  {description}
-                </Typography>
-              </Card>
-            ))}
-          </div>
-          <PageTitle section="Contact Us" heading="Want to work with us?">
-            Complete this form and we will get back to you in 24 hours.
-          </PageTitle>
-          <form className="mx-auto w-full mt-12 lg:w-5/12">
-            <div className="mb-8 flex gap-8">
-              <Input variant="outlined" size="lg" label="Full Name" />
-              <Input variant="outlined" size="lg" label="Email Address" />
-            </div>
-            <Textarea variant="outlined" size="lg" label="Message" rows={8} />
-            <Checkbox
-              label={
-                <Typography
-                  variant="small"
-                  color="gray"
-                  className="flex items-center font-normal"
-                >
-                  I agree the
-                  <a
-                    href="#"
-                    className="font-medium transition-colors hover:text-gray-900"
-                  >
-                    &nbsp;Terms and Conditions
-                  </a>
-                </Typography>
-              }
-              containerProps={{ className: '-ml-2.5' }}
-            />
-            <Button variant="gradient" size="lg" className="mt-8" fullWidth>
-              Send Message
-            </Button>
-          </form>
+      <section
+        className="relative h-screen bg-cover bg-center px-4 flex justify-center items-center"
+        style={{
+          backgroundImage: "url('/img/bg4.jpg')",
+          filter: 'brightness(150%)',
+        }}
+      >
+        <div className="text-white text-4xl md:text-6xl lg:text-8xl xl:text-10xl font-outfit font-bold opacity-100 transition-opacity duration-500">
+          {texts[textIndex]}
         </div>
       </section>
+
       <div className="bg-white">
         <Footer />
       </div>
